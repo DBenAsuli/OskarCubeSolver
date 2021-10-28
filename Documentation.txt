@@ -25,3 +25,7 @@ Tel-Aviv University   October 2021
             3—move one unit along the y-axis in the negative direction
             4—move one unit along the z-axis in the positive direction
             5—move one unit along the z-axis in the negative direction
+
+    Instructions:
+        In order to run the program, run oskar.py.
+        The program will ask for arguments and the input line as described above must be passed.
