@@ -1,0 +1,27 @@
+Algorithmic Robotics and Motion Planning - Assignment no. 1
+    Oskar Cube Solver
+Dvir Ben Asuli        318208816
+Tel-Aviv University   October 2021
+
+    Assumptions:
+        - A valid input file starts with the x, y, and z dimensions (in that order) of the puzzle followed by three matrices representing the xy-, yz-, and zx-faces; 0 represents a free location and 1 represents a forbidden location.
+        - Each location is a vector of three integral values specifying the x, y, and z coordinates of the robot center.
+
+    Input:
+        The program should accept 7 arguments on the command line:
+            The source location of the robot, followed by the destination location of the robot, followed by the name of file that contains the description of the obstacle.
+            The entry in row i>=0 and column j>=0 in the xy-matrix represents the value for x=j and y=i. The same holds for the two other matrices.
+            The same applies for yz-matrix anf zx-matrix
+
+
+    Output:
+        The program should export the result to the standard output. The output format must be identical to the format of the input file (solution.txt) of the verifier (see below). It consists of three lines.
+        The first and second lines contain the start and end positions, respectively. Each position consists of three integral values separated by spaces.
+        The third line contains a sequence of commands separated by spaces. Applying these commands to the robot should move it from the source location to the destination location without passing through forbidden locations. A command is encoded as follows:
+
+            0—move one unit along the x-axis in the positive direction
+            1—move one unit along the x-axis in the negative direction
+            2—move one unit along the y-axis in the positive direction
+            3—move one unit along the y-axis in the negative direction
+            4—move one unit along the z-axis in the positive direction
+            5—move one unit along the z-axis in the negative direction
