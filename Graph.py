@@ -1,7 +1,9 @@
 # Algorithmic Robotics and Motion Planning - Assignment no. 1
 # Dvir Ben Asuli        318208816
 # Tel-Aviv University   October 2021
+
 from queue import Queue
+
 
 class Node:
     counter = 0
@@ -12,7 +14,7 @@ class Node:
         self.y = y
         self.z = z
         self.parent = None
-        self.rid = str(x)+str(y)+str(z)
+        self.rid = str(x) + str(y) + str(z)
         Node.counter += 1
 
     def update_parent(self, c):
@@ -40,11 +42,10 @@ class Graph:
         self.xy_size = len(xy)
         self.yz_size = len(yz)
         self.zx_size = len(zx)
-        self.queue = Queue(maxsize = len(xy)*len(yz)*len(zx))
+        self.queue = Queue(maxsize=len(xy) * len(yz) * len(zx))
         self.queue.put(root)
 
     def add_node(self, predecessor, x, y, z):
-
         node = Node(x, y, z)
         # Checking if the incoming and outgoing nodes already exist in the graph
         # If not create new ones
@@ -52,5 +53,3 @@ class Graph:
             self.registry[node.rid] = node
             node.update_parent(predecessor)
             self.queue.put(node)
-
-

@@ -6,6 +6,7 @@ Tel-Aviv University   October 2021
     Assumptions:
         - A valid input file starts with the x, y, and z dimensions (in that order) of the puzzle followed by three matrices representing the xy-, yz-, and zx-faces; 0 represents a free location and 1 represents a forbidden location.
         - Each location is a vector of three integral values specifying the x, y, and z coordinates of the robot center.
+        - The name of the file passed to the program exists in the code's directory
 
     Input:
         The program should accept 7 arguments on the command line:

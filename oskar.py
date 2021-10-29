@@ -6,6 +6,7 @@ from Graph import Graph, Node
 from InstructionParser import instruction_parser
 from Scanner import Response, scan_cube, vacant_spot, track_path
 
+
 class Main():
     def __init__(self):
         self.program = input("Enter arguments: ")
@@ -13,7 +14,7 @@ class Main():
     def run(self):
 
         ## Receiving all the parameters from input
-        source, destination, xy_mat, yz_mat, zx_mat= instruction_parser(self.program)
+        source, destination, xy_mat, yz_mat, zx_mat = instruction_parser(self.program)
 
         sx = source[0]
         sy = source[1]
@@ -31,7 +32,7 @@ class Main():
             return
 
         # Scanning the cube as a graph
-        response, dest_node = scan_cube(graph, source, destination, xy_mat, yz_mat, zx_mat)
+        response, dest_node = scan_cube(graph, destination, xy_mat, yz_mat, zx_mat)
 
         if response == Response.FOUND:
             # If a path was found from source to destination, we need to track the steps

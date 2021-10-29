@@ -13,17 +13,17 @@ def instruction_parser(command):
 
     values = command.split()
 
-    #Get starting coordinates
+    # Get starting coordinates
     sx = int(values[0])
     sy = int(values[1])
     sz = int(values[2])
 
-    #Get destinations coordinates
+    # Get destinations coordinates
     dx = int(values[3])
     dy = int(values[4])
     dz = int(values[5])
 
-    #Handle File
+    # Handle File
     filename = values[6]
     file = open(filename, "r")
 
@@ -39,18 +39,18 @@ def instruction_parser(command):
             if (line == ""):
                 continue
 
-            #XY
-            #The entry in row i>=0 and column j>=0 in the xy-matrix represents the value for x=j and y=i
-            num_of_cols  = int(dimensions[0]) # X
-            num_of_lines = int(dimensions[1]) # Y
+            # XY
+            # The entry in row i>=0 and column j>=0 in the xy-matrix represents the value for x=j and y=i
+            num_of_cols = int(dimensions[0])  # X
+            num_of_lines = int(dimensions[1])  # Y
 
             j = 0
-            if (i < num_of_lines+1):
+            if (i < num_of_lines + 1):
 
                 line_array = []
-                while ( j<num_of_cols):
+                while (j < num_of_cols):
                     line_array.append(int(values[j]))
-                    j = j+1
+                    j = j + 1
 
                 xy_mat.append(line_array)
                 prev_i1 = i
@@ -61,9 +61,9 @@ def instruction_parser(command):
                 xy_finished = 1
                 continue
 
-            #YZ
-            #The entry in row i>=0 and column j>=0 in the YZ-matrix represents the value for y=j and z=i
-            num_of_cols  = int(dimensions[1])  # Y
+            # YZ
+            # The entry in row i>=0 and column j>=0 in the YZ-matrix represents the value for y=j and z=i
+            num_of_cols = int(dimensions[1])  # Y
             num_of_lines = int(dimensions[2])  # Z
 
             j = 0
@@ -83,9 +83,9 @@ def instruction_parser(command):
                 yz_finished = 1
                 continue
 
-            #ZX
-            #The entry in row i>=0 and column j>=0 in the zx-matrix represents the value for z=j and x=i
-            num_of_cols  = int(dimensions[2])  # Z
+            # ZX
+            # The entry in row i>=0 and column j>=0 in the zx-matrix represents the value for z=j and x=i
+            num_of_cols = int(dimensions[2])  # Z
             num_of_lines = int(dimensions[0])  # X
 
             j = 0
