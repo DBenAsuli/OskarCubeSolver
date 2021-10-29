@@ -1,5 +1,5 @@
 # Algorithmic Robotics and Motion Planning - Assignment no. 1
-# Dvir Ben Asuli        318208816
+# Dvir Ben Asuli
 # Tel-Aviv University   October 2021
 
 from queue import Queue
